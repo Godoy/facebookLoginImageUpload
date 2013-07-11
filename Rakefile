@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-FacebookLoginPhotoUpload::Application.load_tasks
+FacebookLoginImageUpload::Application.load_tasks

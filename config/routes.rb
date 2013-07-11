@@ -1,4 +1,4 @@
-FacebookLoginPhotoUpload::Application.routes.draw do
+FacebookLoginImageUpload::Application.routes.draw do
 
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
