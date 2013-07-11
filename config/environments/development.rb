@@ -34,4 +34,7 @@ FacebookLoginPhotoUpload::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  ENV['FACEBOOK_APP_ID'] = "411186308994220";
+  ENV['FACEBOOK_SECRET'] = "b7729e67d4a1922fd827d5f40e12616c";
 end
