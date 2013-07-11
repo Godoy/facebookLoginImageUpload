@@ -13,3 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+#ignora arquivos com dados sensíveis
+config/database.yml
+config/facebook.yml
