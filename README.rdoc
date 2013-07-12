@@ -2,11 +2,14 @@
 Login com Facebook e upload de imagem pelo usuário logado
 
 TODO:
-- Configurar Upload de imagem com paperclip
-- Configurar rails_admin para acesso às imagens dos usuários
-- Instalar gem bootstrap no projeto e colocar site num template de exemplo 
+- OK Configurar Upload de imagem com paperclip
+- OK Configurar rails_admin para acesso às imagens dos usuários
+- OK Instalar gem bootstrap no projeto e colocar site num template de exemplo 
 - Disparar e-mail para usuário ao se cadastrar
 - Disparar e-mail para usuário ao subir a imagem
-- Adicionar input para usuário inserir frase junto com o upload da imagem
-- Permitir que imagem + frase sejam visualizadas por permalink
+- OK Adicionar input para usuário inserir frase junto com o upload da imagem
+- OK Permitir que imagem + frase sejam visualizadas por permalink
 - Enviar permalink do usuário por e-mail
+
+- Trocar id passado no permalink por parametro aleatorio
+- Não permitir que o usuario reenvie a frase+imagem. Fazer redirect para permalink caso o usuario logado com frase+imagem cadastrada visite a pagina com o formulario novamente.
