@@ -5,6 +5,7 @@ gem 'rails', '3.2.11'
 gem 'sqlite3'
 
 gem 'omniauth-facebook', '1.4.0'
+gem 'rails_admin'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -17,3 +18,5 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem "devise"
