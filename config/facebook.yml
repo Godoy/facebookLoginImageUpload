@@ -1,13 +1,13 @@
 development:
-  app_id: "411186308994220"
-  secret: "b7729e67d4a1922fd827d5f40e12616c"
+  app_id: "600933279928650"
+  secret: "ac5fd7893ab3f5e2c73f8eeea231c847"
 
 production:
   app_id: "411186308994220"
   secret: "b7729e67d4a1922fd827d5f40e12616c"
 
 test:
-  app_id: "411186308994220"
-  secret: "b7729e67d4a1922fd827d5f40e12616c"
+  app_id: "600933279928650"
+  secret: "ac5fd7893ab3f5e2c73f8eeea231c847"
 
 
