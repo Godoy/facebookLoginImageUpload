@@ -23,12 +23,14 @@ class User < ActiveRecord::Base
     #logger.debug self.image.path.methods.to_yaml
     #self.image_file_name
     if !self.image.path.nil?
-    image = MiniMagick::Image.open(self.image.path(:masked))
-    result = image.composite(MiniMagick::Image.open("public/image_masks/mascara04.png", "jpg")) do |c|
-      c.gravity "center"
-    end
+      image = MiniMagick::Image.open(self.image.path(:masked))
 
-    result.write self.image.path(:masked) #Rails.root.join('public',"my_output_file.jpg")
+      path_mask = self.mask.image.path(:medium)
+      result = image.composite(MiniMagick::Image.open(path_mask, "jpg")) do |c|
+        c.gravity "center"
+      end
+
+      result.write self.image.path(:masked) #Rails.root.join('public',"my_output_file.jpg")
     end
   end
 end
