@@ -109,6 +109,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
       mime-types
+    pg (0.15.1)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -190,6 +191,7 @@ DEPENDENCIES
   mini_magick
   omniauth-facebook (= 1.4.0)
   paperclip (~> 3.0)
+  pg
   rails (= 3.2.11)
   rails_admin
   sass-rails (~> 3.2.3)
