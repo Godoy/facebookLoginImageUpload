@@ -16,5 +16,5 @@
 
 #ignora arquivos com dados sensíveis
 config/database.yml
-config/facebook.yml
+#config/facebook.yml
 public/system/users/images
