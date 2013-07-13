@@ -1,3 +1,13 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.select-image {
+	margin-right: 10px;
+	display: block;
+	float: left;
+
+	&.selected {
+		border: 5px solid #00D900;
+	}
+}
