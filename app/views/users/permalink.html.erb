@@ -4,5 +4,5 @@
 
 <p><%= @user.phrase %></p>
 
-<img src="<%= @user.image %>" >
 
+<%= image_tag @user.image.url(:masked) %>

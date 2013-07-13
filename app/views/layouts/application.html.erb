@@ -10,18 +10,30 @@
 
   <div class="container">
 
-    <div class="row-fluid">
-      <div class="span12">
-        <div id="user_nav">
-          <% if current_user %>
-            Signed in as <strong><%= current_user.name %></strong>!
-            <%= link_to "Sign out", signout_path, id: "sign_out" %>
-          <% else %>
-            <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-          <% end %>
-        </div>
+    <div class="masthead">
+      <ul class="nav nav-pills pull-right">
+        <li class="<%= markActive(root_path)%>" ><%= link_to "Home", root_path %></li>
+        
+                
+        <% if current_user %>
+          <li class="<%= markActive(permalink_path(current_user.id))%>" ><%= link_to "Permalink", permalink_path(current_user.id) %></li>
+          <li><img src="http://graph.facebook.com/<%= current_user.uid %>/picture?width=30&height=30"  ></strong></li>
+          <li><%= link_to "Sair", signout_path, id: "sign_out" %></li>
+        <% else %>
+          <li><%= link_to "Acessar", "/auth/facebook", :class => "sign_in" %></li>
+        <% end %>
+        
+      </ul>
+      <h3 class="muted">Nome do Projeto</h3>
+    </div>
 
+    <hr>
+
+    <div class="row-fluid">
+
+      <div class="span12">
         <%= yield %>
+        
       </div>
     </div>
   </div>

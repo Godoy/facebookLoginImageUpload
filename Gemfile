@@ -7,6 +7,7 @@ gem 'sqlite3'
 gem 'omniauth-facebook', '1.4.0'
 gem 'rails_admin'
 gem "paperclip", "~> 3.0"
+gem "mini_magick"
 
 # Gems used only for assets and not required
 # in production environments by default.

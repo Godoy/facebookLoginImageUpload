@@ -1,26 +1,29 @@
 <h1>Home</h1>
 
-
-
 <% if current_user %>
 	<%= form_for current_user, :url => { :action => "participate", :controller => "users" }, :html => { :multipart => true, :class => "form-horizontal" } do |f| %>
-		
-	  <div class="control-group">
-	    <label class="control-label" for="inputEmail">Imagem</label>
-	    <div class="controls">
-	      <%= f.file_field :image %>
-	    </div>
-	  </div>
 
-	  <div class="control-group">
-	    <label class="control-label" for="inputEmail">Frase</label>
-	    <div class="controls">
-	      <%= f.text_field :phrase %>
-	    </div>
-	  </div>		
+		<div class="control-group">
+			<label class="control-label" for="inputEmail">Imagem</label>
+			<div class="controls">
+				<%= f.file_field :image %>
+			</div>
+		</div>
 
-		
+		<div class="control-group">
+			<label class="control-label" for="inputEmail">Frase</label>
+			<div class="controls">
+				<%= f.text_field :phrase %>
+			</div>
+		</div>		
 
 		<%= f.submit "enviar", :class => "btn btn-primary" %>
 	<% end %>
+
+<% else %>
+
+
+	<p class="lead">Efetue login, faça upload de uma imagem e compartilhe com os amigos!</p>
+	<%= link_to "Acessar", "/auth/facebook", :class => "sign_in btn btn-large btn-success" %>
+
 <% end %>

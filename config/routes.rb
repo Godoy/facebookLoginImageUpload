@@ -1,7 +1,7 @@
 FacebookLoginImageUpload::Application.routes.draw do
 
   put "users/participate"
-  get "permalink/:id" => "users#permalink"
+  get "permalink/:id", to: "users#permalink", as: "permalink"
   
   devise_for :admins
 

@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def participate
 
+
+
     respond_to do |format|
       if current_user.update_attributes(params[:user])
         format.html { redirect_to "/permalink/#{current_user.id}", notice: 'Cadastro com sucesso.' }
