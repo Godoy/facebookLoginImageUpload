@@ -6,6 +6,7 @@ gem 'omniauth-facebook', '1.4.0'
 gem 'rails_admin'
 gem "paperclip", "~> 3.0"
 gem "mini_magick"
+#gem "rmagick", "~> 2.13.2"
 
 group :production do
   gem 'pg'

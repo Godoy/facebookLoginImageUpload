@@ -4,5 +4,7 @@ class PagesController < ApplicationController
   def home
   	@masks = Mask.all
 
+
+
   end
 end

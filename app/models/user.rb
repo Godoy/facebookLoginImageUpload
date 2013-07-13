@@ -18,19 +18,49 @@ class User < ActiveRecord::Base
     end
   end  
 
-
   def apply_image_mask
     #logger.debug self.image.path.methods.to_yaml
     #self.image_file_name
     if !self.image.path.nil?
-      image = MiniMagick::Image.open(self.image.path(:masked))
+
+      img = MiniMagick::Image.open(self.image.path(:masked))
+
+      img.combine_options do |c|
+        c.gravity 'North'
+        c.fill '#ff0000'
+        #c.stroke 'black'
+        #c.strokewidth '2'
+        c.pointsize '26'
+        #c.interline_spacing '5'
+        c.font "public/fonts/comic-sans.ttf" 
+        c.size "200x200"
+        
+        c.annotate '+0+60', clean_msg(self.phrase)
+      end
+
 
       path_mask = self.mask.image.path(:medium)
-      result = image.composite(MiniMagick::Image.open(path_mask, "jpg")) do |c|
+      img = img.composite(MiniMagick::Image.open(path_mask, "jpg")) do |c|
         c.gravity "center"
       end
 
-      result.write self.image.path(:masked) #Rails.root.join('public',"my_output_file.jpg")
+      img.write self.image.path(:masked) #"public/teste.png"
+
     end
+  end
+
+  private
+  def clean_msg(text)
+    wrapped_text = word_wrap text
+    escape_quotes wrapped_text
+  end
+  
+  def word_wrap(text, col = 27)
+    wrapped = text.gsub(/(.{1,#{col + 4}})(\s+|\Z)/, "\\1\n")
+    wrapped.chomp!
+  end
+
+  def escape_quotes(text)
+    text.gsub(/"/, "''")
   end
 end

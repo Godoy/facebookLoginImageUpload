@@ -6,6 +6,7 @@
 		<%= f.hidden_field :mask_id %>
 
 		<div class="control-group">
+			<p>Escolha um estilo para sua foto:</p>
 			<% @masks.each do |mask| %> 
 			<a href="javascript:void(0);" class="select-image" data-id="<%= mask.id %>">
 				<%= image_tag mask.image.url(:thumb), :width => 100, :class => "img-rounded" %>
