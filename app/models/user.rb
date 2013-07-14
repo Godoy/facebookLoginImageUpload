@@ -19,23 +19,24 @@ class User < ActiveRecord::Base
   end  
 
   def apply_image_mask
-    #logger.debug self.image.path.methods.to_yaml
+    logger.debug self.mask.to_yaml
     #self.image_file_name
+
+#gravity: NorthWest, North, NorthEast, West, Center, East, SouthWest, South, or SouthEast
     if !self.image.path.nil?
 
       img = MiniMagick::Image.open(self.image.path(:masked))
 
       img.combine_options do |c|
-        c.gravity 'North'
-        c.fill '#ff0000'
+        c.gravity self.mask.gravity #'NorthWest'
+        c.fill self.mask.font_color #'#ffffff'
         #c.stroke 'black'
         #c.strokewidth '2'
-        c.pointsize '26'
-        #c.interline_spacing '5'
-        c.font "public/fonts/comic-sans.ttf" 
-        c.size "200x200"
+        c.pointsize self.mask.font_size #'26'
+        c.interline_spacing self.mask.interline_spacing #'5'
+        c.font self.mask.font_file.path #{}"public/fonts/comic-sans.ttf" 
+        c.annotate "+#{self.mask.padding_vertical}+#{self.mask.padding_horizontal}", clean_msg(self.phrase)
         
-        c.annotate '+0+60', clean_msg(self.phrase)
       end
 
 

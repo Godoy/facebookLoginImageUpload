@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130713015321) do
+ActiveRecord::Schema.define(:version => 20130713015735) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -33,12 +33,22 @@ ActiveRecord::Schema.define(:version => 20130713015321) do
 
   create_table "masks", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "font_file_file_name"
+    t.string   "font_file_content_type"
+    t.integer  "font_file_file_size"
+    t.datetime "font_file_updated_at"
+    t.integer  "font_size",              :default => 26
+    t.string   "font_color"
+    t.string   "gravity",                :default => "North"
+    t.integer  "padding_vertical",       :default => 0
+    t.integer  "padding_horizontal",     :default => 0
+    t.integer  "interline_spacing",      :default => 5
   end
 
   create_table "rails_admin_histories", :force => true do |t|
